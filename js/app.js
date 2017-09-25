@@ -54,12 +54,6 @@ function resetGame() {
   boxes.forEach((e) => {
     e.innerText = '';
   });
-  //if (boxes.classList === 'O') {
-    //boxes.classList.remove('O');
-  //}
-  //else if (boxes.classList === 'X') {
-    //boxes.classList.remove('X');
-  //}
   playerOne = 'X';
   moves = 0;
 };
@@ -75,7 +69,6 @@ boxes.forEach(function(element) {
     if (this.textContent !== '')
       return;
     this.innerText = playerOne;
-    //this.classList.add(playerOne);
     moves += 1;
     if (getWin()) {
       alert(`Player ${playerOne} won!`);
