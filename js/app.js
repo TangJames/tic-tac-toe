@@ -7,31 +7,31 @@ var playerOne = 'X';
 var moves = 0;
 
 //define boxes and make rule
-function threeInRow(box0, box1, box2) {
+function win(box0, box1, box2) {
   return box0.textContent &&
          (box0.textContent === box1.textContent) &&
          (box1.textContent === box2.textContent);
 };
 //Winning game logic
 function acrossWin() {
-  var botRow = threeInRow(boxes[6], boxes[7], boxes[8]);
-  var midRow = threeInRow(boxes[3], boxes[4], boxes[5]);
-  var topRow = threeInRow(boxes[0], boxes[1], boxes[2]);
+  var botRow = win(boxes[6], boxes[7], boxes[8]);
+  var midRow = win(boxes[3], boxes[4], boxes[5]);
+  var topRow = win(boxes[0], boxes[1], boxes[2]);
 
   return topRow || midRow || botRow;
 };
 
 function verticalWin() {
-  var left = threeInRow(boxes[0], boxes[3], boxes[6]);
-  var mid = threeInRow(boxes[1], boxes[4], boxes[7]);
-  var right = threeInRow(boxes[2], boxes[5], boxes[8]);
+  var left = win(boxes[0], boxes[3], boxes[6]);
+  var mid = win(boxes[1], boxes[4], boxes[7]);
+  var right = win(boxes[2], boxes[5], boxes[8]);
 
   return left || mid || right;
 };
 
 function diagWin() {
-  var leftDown = threeInRow(boxes[0], boxes[4], boxes[8]);
-  var rightDown = threeInRow(boxes[2], boxes[4], boxes[6]);
+  var leftDown = win(boxes[0], boxes[4], boxes[8]);
+  var rightDown = win(boxes[2], boxes[4], boxes[6]);
 
   return leftDown || rightDown;
 };
