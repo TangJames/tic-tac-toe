@@ -6,7 +6,7 @@ var boxes = document.querySelectorAll('.row .box');
 var playerOne = 'X';
 var moves = 0;
 
-//define boxes and make rule
+//define boxes and make win rule
 function win(box0, box1, box2) {
   return box0.textContent &&
          (box0.textContent === box1.textContent) &&
