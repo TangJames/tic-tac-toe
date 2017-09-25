@@ -20,7 +20,7 @@ function winnerWinnerChickenDinner() {
   return topRowAcross || midRowAcross || botRowAcross || leftTop || midTop || rightTop || leftDiag || rightDiag;
 };
 //win condition
-function getWin() {
+function theWin() {
   return winnerWinnerChickenDinner();
 }
 
@@ -61,8 +61,8 @@ boxes.forEach(function(element) {
       return;
     this.innerText = playerOne;
     moves += 1;
-    if (getWin()) {
-      alert(`Player ${playerOne} won!`);
+    if (theWin()) {
+      alert(`Player ${playerOne} has won!`);
     }
     else if (moves < 9) {
       switchPlayer();
